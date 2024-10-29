@@ -53,3 +53,17 @@ FROM movies
 JOIN rentals ON movies.id = rentals.customer_id
 JOIN customers ON customers.id = rentals.movie_id
 WHERE movies.movie_title = 'Mean Girls';
+
+--List all movies that have been rented based on a specific director
+SELECT customers.first_name || ' ' || customers.last_name AS customer_name, rentals.rental_date, movies.movie_title
+FROM movies
+JOIN rentals ON movies.id = rentals.customer_id
+JOIN customers ON customers.id = rentals.movie_id
+WHERE movies.movie_director = 'Mark Waters';
+
+--List the movies that have not been returned
+SELECT movies.movie_title, customers.first_name || ' ' || customers.last_name AS customer_name, rentals.rental_date, rentals.return_date
+FROM movies
+JOIN rentals ON movies.id = rentals.customer_id
+JOIN customers ON customers.id = rentals.movie_id
+WHERE rentals.return_date > CURRENT_DATE;
