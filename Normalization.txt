@@ -1,0 +1,19 @@
+Movies Table
+
+1NF: This is in 1NF because all fields are atomic.
+2NF: The primary key is id, and all other fields are dependent on this key.
+3NF: There are no transitive dependencies; for example, movie_genre and movie_director are independent of each other and depend only on id, so the movies table is in 3NF.
+
+
+Customer Table
+
+1NF: This is in 1NF because all fields are atomic.
+2NF: The primary key is id, and all other fields are dependent on this key.
+3NF: There are no transitive dependencies; each attribute is directly dependent on the primary key, so the customers table is also in 3NF.
+
+
+Rentals Table
+
+1NF: This is in 1NF because all fields are atomic.
+2NF: The primary key is id, and all the other fields depend fully this key. The foreign keys relate directly to their respective tables, maintaining functional dependency.
+3NF: There are no transitive dependencies because rental_date and return_date are attributes that depend solely on the rental transaction identified by id. The dependencies among customer_id and movie_id do not imply further dependencies among non-key attributes. Therefore, the rentals table is also in 3NF.
