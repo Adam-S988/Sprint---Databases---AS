@@ -98,7 +98,7 @@ async function displayMovies() {
       console.log("No movies to display.");
     }
   } catch (error) {
-    console.error("Error displaying data.");
+    console.error("Error displaying movies.");
   }
 }
 
@@ -139,11 +139,9 @@ async function removeCustomer(customerId) {
 
   try {
     await pool.query(query1);
-    console.log("Customer deleted from rental history.");
+    console.log("Customer deleted.");
   } catch (error) {
-    console.error(
-      "Error encountered while trying to delete customer from rental history."
-    );
+    console.error("Error encountered while trying to delete customer.");
   }
 
   const query2 = {
@@ -155,9 +153,7 @@ async function removeCustomer(customerId) {
     await pool.query(query2);
     console.log("Customer deleted from database.");
   } catch (error) {
-    console.error(
-      "Error encountered while trying to delete customer from database.."
-    );
+    console.error("Error encountered while trying to delete customer.");
   }
 }
 
